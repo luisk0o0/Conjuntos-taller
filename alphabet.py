@@ -1,3 +1,4 @@
+
 def calculate_union(alphabet_a, alphabet_b):
     return alphabet_a.union(alphabet_b)
     
@@ -8,13 +9,6 @@ def calculate_difference(alphabet_a, alphabet_b):
 
 def calculate_intersection(alphabet_a, alphabet_b):
     return alphabet_a.intersection(alphabet_b)
-
-#aaasdas
-
-
-
-alphabet_1 = set()
-alphabet_2 = set()
 
 enter_a = input("Ingrese el alfabeto A en el formato {elemento1, elemento2, ...}: ")
 try:
@@ -42,3 +36,4 @@ print("difeference",difeference)
 
 intersection= calculate_intersection(alphabet_1,alphabet_2)
 print("intersection",intersection)
+

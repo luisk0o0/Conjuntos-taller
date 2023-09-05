@@ -1,18 +1,21 @@
-def cerradura_de_estrella(conjunto, num_simbolos):
-    resultado = {()}  # Inicializamos con el conjunto vacío como primer elemento
+import random
+import string
 
+def cerradura_de_estrella_aleatoria(num_simbolos):
+    alfabeto = string.ascii_lowercase  # Alfabeto en minúsculas (a-z)
+    palabras_generadas = set()
+    
     for _ in range(num_simbolos):
-        nueva_combinacion = set()
-        for combinacion in resultado:
-            for elemento in conjunto:
-                nueva_combinacion.add(combinacion + (elemento,))
-        resultado.update(nueva_combinacion)
+        palabra = ''.join(random.choice(alfabeto) for _ in range(random.randint(1, 5)))  # Genera palabras aleatorias
+        palabras_generadas.add(palabra)
+    
+    return palabras_generadas
 
-    return resultado
+# Solicita al usuario ingresar el número de símbolos para la cerradura de estrella
+num_simbolos = 5
 
-# Define un conjunto de 5 símbolos específicos
-conjunto_simbolos = {'albania', 'bucaramnga', 'cucuta', 'dios', 'elemento'}
-
-# Calcula y muestra la cerradura de estrella con 5 símbolos
-cerradura = cerradura_de_estrella(conjunto_simbolos, 2)
-print("Cerradura de estrella del conjunto de 5 símbolos:", cerradura)
+# Calcula y muestra la cerradura de estrella con 5 símbolos generados de forma aleatoria
+cerradura_estrella = cerradura_de_estrella_aleatoria(num_simbolos)
+print("Cerradura de estrella generada de forma aleatoria:", cerradura_estrella)
+#for palabra in cerradura_estrella:
+#print(palabra)
